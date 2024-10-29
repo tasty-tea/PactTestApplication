@@ -24,12 +24,12 @@ class Users::Create < ActiveInteraction::Base
       user.save!
     end
 
-    user_skills = []
+    user_skils = []
     params["skills"].split(",").each do |skil|
       skil = Skil.find(name: skil)
-      user_skills =  user_skills + [ skil ]
+      user_skils =  user_skils + [ skil ]
     end
-    user.skills = user_skills
+    user.skils = user_skils
     user.save
   end
 end

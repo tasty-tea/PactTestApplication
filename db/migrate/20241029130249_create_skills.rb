@@ -8,7 +8,7 @@ class CreateSkills < ActiveRecord::Migration[7.2]
 
     create_table :user_skills do |t|
       t.references :user, null: false, foreign_key: true, index: true
-      t.references :skil, null: false, foreign_key: true, index: true
+      t.references :skill, null: false, foreign_key: true, index: true
 
       t.timestamps
     end
