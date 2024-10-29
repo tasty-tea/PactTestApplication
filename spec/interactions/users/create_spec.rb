@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Users::CreateUser, type: :service do
+RSpec.describe Users::Create, type: :service do
   let(:user) { build(:user) }
 
   let(:valid_params) do

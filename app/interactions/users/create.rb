@@ -1,4 +1,4 @@
-class Users::CreateUser < ActiveInteraction::Base
+class Users::Create < ActiveInteraction::Base
   hash :params do
     string :name
     string :surname
