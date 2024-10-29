@@ -13,16 +13,19 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  encoding: unicode
+  host:     <%= ENV['POSTGRES_HOST'] || 'db' %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV['POSTGRES_DB']%>
+  port:     <%= ENV['POSTGRES_PORT'] || '5432' %>
 
 
 development:
   <<: *default
-  database: pact_test_application_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: pact_test_application_test
+  database: <%= ENV['POSTGRES_DB_TEST'] || 'pact_test_application_test' %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +83,3 @@ test:
 #
 production:
   <<: *default
-  database: pact_test_application_production
-  username: pact_test_application
-  password: <%= ENV["PACT_TEST_APPLICATION_DATABASE_PASSWORD"] %>
