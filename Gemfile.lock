@@ -45,9 +45,9 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    active_interaction (5.3.0)
-      activemodel (>= 5.2, < 8)
-      activesupport (>= 5.2, < 8)
+    active_interaction (5.4.0)
+      activemodel (>= 5.2, < 9)
+      activesupport (>= 5.2, < 9)
     activejob (7.2.1.2)
       activesupport (= 7.2.1.2)
       globalid (>= 0.3.6)
@@ -119,7 +119,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     mini_mime (1.1.5)
-    minitest (5.25.1)
+    minitest (5.25.2)
     msgpack (1.7.3)
     net-imap (0.5.0)
       date
@@ -243,7 +243,7 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
-    securerandom (0.3.1)
+    securerandom (0.3.2)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
     stringio (3.1.1)
@@ -268,7 +268,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  active_interaction (~> 5.3)
+  active_interaction (~> 5.4)
   bootsnap
   brakeman
   debug
